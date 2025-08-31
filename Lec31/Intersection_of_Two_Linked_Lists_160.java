@@ -1,0 +1,37 @@
+package Lec31;
+
+public class Intersection_of_Two_Linked_Lists_160 {
+
+	class ListNode {
+		int val;
+		ListNode next;
+
+		ListNode(int x) {
+			val = x;
+			next = null;
+		}
+	}
+
+	public class Solution {
+		public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+			ListNode tempA=headA;
+			ListNode tempB=headB;
+			while(tempA!=tempB) {
+				if(tempA==null) {
+					tempA=headB;
+				}
+				else {
+					tempA=tempA.next;
+				}
+				if(tempB==null) {
+					tempB=headA;
+				}
+				else {
+					tempB=tempB.next;
+				}
+			}
+			return tempB;
+		}
+	}
+
+}
